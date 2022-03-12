@@ -7,11 +7,25 @@ namespace WSEI_Objektowe_Lab1
     {
         static void Main(string[] args)
         {
+            try
+            {
+                MainLoop();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+            }
+        }
+
+        static void MainLoop()
+        {
             var shapes = new List<IShape>()
             {
                 new Rectangle(),
                 new Square()
             };
+
             while (true)
             {
                 for (int i = 0; i < shapes.Count; i++)
@@ -32,7 +46,6 @@ namespace WSEI_Objektowe_Lab1
                 shapes[index - 1].GetData();
                 shapes[index - 1].CalculateArea();
             }
-
         }
 
 
