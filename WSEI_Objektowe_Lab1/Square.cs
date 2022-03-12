@@ -10,16 +10,21 @@ namespace WSEI_Objektowe_Lab1
     {
         private int a;
 
+        public string Name => "Kwadrat";
 
-        public int CalculateArea()
+        public void CalculateArea()
         {
-            return a * a;
+            Console.WriteLine(a*a);
         }
 
         public void GetData()
         {
+            
             Console.WriteLine("podaj dlugosc boku");
-            int a = Int32.Parse(Console.ReadLine());
+            var userInput = Console.ReadLine();
+
+            if (!Int32.TryParse(userInput, out a))
+                throw new ArgumentException("podano niepoprawny argument");
         }
     }
 }

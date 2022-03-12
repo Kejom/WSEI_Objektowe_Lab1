@@ -8,7 +8,8 @@ namespace WSEI_Objektowe_Lab1
 {
     interface IShape
     {
+        public string Name { get;}
         void GetData();
-        int CalculateArea();
+        void CalculateArea();
     }
 }
